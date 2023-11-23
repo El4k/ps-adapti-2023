@@ -19,6 +19,7 @@ class AlunoController extends Controller
 
     public function create()
     {
+        return view('admin.aluno.crud');
     }
 
 

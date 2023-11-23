@@ -10,7 +10,7 @@ class Curso extends Model
     use HasFactory;
 
     protected $fillable = [
-        'nome'
+        'curso'
     ];
 
     public function alunos()
