@@ -17,8 +17,15 @@
     <div class='aluninhos'>
         @foreach ($alunos as $aluno)
             <tr>
-                <td>{{ $aluno->id }}</td>
-                <td>{{ $aluno->nome }}</td>
+                <div>
+                    <td>{{ $aluno->id }}</td>
+                </div>
+                <div>
+                    <td>{{ $aluno->nome }}</td>
+                </div>
+                <div>
+                    <img src="{{ url($aluno->imagem) }}" class="image-single-page-news-know" alt="News">
+                </div>
             </tr>
         @endforeach
     </div>
