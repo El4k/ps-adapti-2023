@@ -9,16 +9,18 @@ class Aluno extends Model
 {
     use HasFactory;
 
+    protected $table = 'alunos';
+
     protected $fillable = [
         'nome',
         'descricao',
-        'graduado',
-        'foto',
+        'formado',
+        'imagem',
         'curso_id'
     ];
 
-    public function nacionalidade()
+    public function curso()
     {
-        return $this->belongTo(Curso::class, 'curso_id');
+        return $this->belongsTo(Curso::class, 'curso_id');
     }
 }

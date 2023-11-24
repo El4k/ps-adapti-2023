@@ -19,8 +19,7 @@
     <label class="col-sm-2 col-form-label">{{ __('Descricao do Aluno') }}</label>
     <div>
         <textarea id="descricao" name="descricao" class="form-control @error('descricao') is-invalid @enderror"
-            placeholder="Escreva uma descrição curta sobre o aluno"
-            required>{{ isset($aluno) ? $aluno->descricao : old('descricao') }}</textarea>
+            placeholder="Escreva uma descrição curta sobre o aluno" required>{{ isset($aluno) ? $aluno->descricao : old('descricao') }}</textarea>
         @error('descricao')
             <span class="invalid-feedback" role="alert">
                 <i class="fi-circle-cross"></i><strong> {{ $message }}</strong>
@@ -48,8 +47,7 @@
 <div class="row">
     <label class="col-sm-2 col-form-label">{{ __('Curso') }}</label>
     <div>
-        <select id="curso_id" name="curso_id" class="form-control @error('curso_id') is-invalid @enderror"
-            required>
+        <select id="curso_id" name="curso_id" class="form-control @error('curso_id') is-invalid @enderror" required>
             <option value="">--- Selecione um Curso ---</option>
             @isset($cursos)
                 @foreach ($cursos as $curso)

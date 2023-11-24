@@ -30,7 +30,7 @@ class CursoController extends Controller
 
     public function store(CursoRequest $request)
     {
-        $data = $request->all();
+        $data = $request->validated();
         $this->cursos->create($data);
         return redirect()->route('curso.index')->with('sucess', 'Curso cadastrado com sucesso.');
     }
@@ -49,7 +49,7 @@ class CursoController extends Controller
 
     public function update(CursoRequest $request, $id)
     {
-        $data = $request->all();
+        $data = $request->validated();
         $curso = $this->cursos->find($id);
         $curso->update($data);
         return redirect()->route('curso.index')->with('sucess', 'Curso atualizado com sucesso.');
