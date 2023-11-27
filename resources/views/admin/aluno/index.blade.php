@@ -155,11 +155,13 @@
             const url = 'aluno/' + id
             $.getJSON(url, (resposta) => {
                 console.log(resposta);
+                // Convert the contratado value to a human-readable format
+                const contratadoText = resposta.contratado ? 'Contratado' : 'Não Contratado';
                 $("#detalhes-nome").val(resposta.nome);
-                $("#detalhes-contratado").val(resposta.contratado);
+                $("#detalhes-contratado").val(contratadoText);
                 $("#detalhes-descricao").val(resposta.descricao);
-                $("#detalhes-curso").val(resposta.curso);
-                $("#detalhes-imagem").attr('src', '/storage/' + resposta.imagem);
+                $("#detalhes-curso").val(resposta.curso.curso);
+                $("#detalhes-imagem").attr('src', '' + resposta.imagem);
             });
         })
         /* js para abrir Modal de excluir de forma dinâmica */

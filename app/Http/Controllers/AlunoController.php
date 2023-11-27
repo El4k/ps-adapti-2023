@@ -60,7 +60,6 @@ class AlunoController extends Controller
         return view('admin.aluno.crud', compact('aluno', 'cursos'));
     }
 
-
     public function update(AlunoRequest $request, $id)
     {
         $data = $request->all();
@@ -75,6 +74,13 @@ class AlunoController extends Controller
 
         return redirect()->route('aluno.index')->with('sucess', 'Aluno atualizado com sucesso.');
     }
+
+    public function contratar(Aluno $aluno)
+    {
+        $aluno->update(['contratado' => true]);
+        return redirect()->back()->with('status', 'Aluno contratado com sucesso!');
+    }
+
 
     public function destroy($id)
     {
