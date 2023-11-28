@@ -2,7 +2,7 @@
     --background-color: #495057;
     --text-color: #000;
     --card-background: #2980b9;
-    --bright-color: #a9cce3; /* Define a brighter color */
+    --bright-color: #a9cce3;
 }
 
 body {
@@ -14,7 +14,7 @@ body {
 }
 
 .container {
-    text-align: center; /* Center the text within the container */
+    text-align: center;
 }
 
 body.dark-mode {
@@ -91,30 +91,73 @@ body.dark-mode .card {
     justify-content: center;
     gap: 20px;
     margin-top: 25px;
+    margin-left: -450px;
+    margin-right: -450px;
+}
+
+#search-container {
+    margin-left: -600px;
+    margin-bottom: 20px;
+}
+
+#search-container label {
+    color: white;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+}
+
+#curso-search {
+    padding: 5px;
+}
+
+#curso-search {
+    padding: 5px;
 }
 
 .card {
     background-color: var(--card-background);
     background-color: #9a8c98;
     border-radius: 1.4rem;
-    width: 200px;
+    max-width: 100%; /* Adjust to make the cards responsive */
+    width: calc(15% - 20px); /* Adjust for better responsiveness */
+    height: auto; /* Adjust for better responsiveness */
     padding: 20px;
-
+    gap: 10px;
     display: flex;
     flex-direction: column;
-    gap: 0px;
 
     box-shadow: 5px 5px 15px -1px rgba(0, 0, 0, 0.41);
 
-    font-size: 1.3rem;
+    font-size: 1rem; /* Adjust for better responsiveness */
     font-weight: 600;
     color: black;
 }
 
+.card .info {
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+    align-items: center;
+    text-align: center;
+}
+
+.card h4,
+.card p {
+    margin: 0;
+    align-items: center;
+}
 .card img {
-    aspect-ratio: 1/1;
-    object-fit: cover;
+    width: 100%;
+    height: auto;
     border-radius: 1.4rem;
+}
+
+.bottom-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: auto;
 }
 
 .botao {
@@ -131,5 +174,31 @@ body.dark-mode .card {
     #cabeçalho,
     #cabeçalho ul {
         flex-direction: column;
+    }
+    .card {
+        width: calc(50% - 20px); /* Adjust for better responsiveness */
+    }
+}
+
+@media (max-width: 750px) {
+    #container-cards {
+        margin-left: -10px; /* Adjust margin for better responsiveness */
+        margin-right: -10px; /* Adjust margin for better responsiveness */
+    }
+
+    .card {
+        width: calc(50% - 10px); /* Adjust for better responsiveness */
+    }
+}
+
+@media (max-width: 375px) {
+    #cabeçalho,
+    #cabeçalho ul {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .card {
+        width: calc(100% - 20px); /* Adjust for better responsiveness */
     }
 }

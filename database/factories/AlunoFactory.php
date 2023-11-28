@@ -16,14 +16,15 @@ class AlunoFactory extends Factory
      */
     public function definition()
     {
-        // Set the locale to Brazilian Portuguese
-        $this->faker->locale('pt_BR');
 
         $likes = $this->faker->randomElements(['reading', 'coding', 'traveling', 'cooking'], $count = 2);
         $jobApplication = $this->faker->boolean;
 
         return [
-            'nome' => $this->faker->name('male'), // Generates a fake name (could be Brazilian/Portuguese)
+            'nome' => substr(str_pad($this->faker->name, 10), 0, 10),
+
+
+            // Generates a fake name (could be Brazilian/Portuguese)
             'descricao' => $jobApplication ? $this->generateJobApplicationText() : $this->generateLikesText($likes),
             'contratado' => false,
             'imagem' => $this->faker->randomElement([

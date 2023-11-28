@@ -14,20 +14,19 @@ darkModeToggle.addEventListener("click", () => {
     }, 100);
 });
 
-function trocarVar() {
-    $.ajax({
-        type: "POST",
-        url: "/aluno/toggleContratar/" + alunoId,
-        data: {
-            _token: token,
-            contratado: contratadoValue,
-        },
-        success: function (data) {
-            // Update the button text or perform any other dynamic changes
-            console.log("Toggle successful");
-        },
-        error: function (data) {
-            console.log("Toggle failed");
-        },
-    });
+function filterCursos() {
+    var searchInput = document.getElementById("search-input");
+    var filter = searchInput.value.toUpperCase();
+    var cards = document.getElementsByClassName("card");
+
+    for (var i = 0; i < cards.length; i++) {
+        var cursoText = cards[i].querySelector("h6").textContent.toUpperCase();
+        var nameText = cards[i].querySelector("h4").textContent.toUpperCase();
+
+        if (cursoText.includes(filter) || nameText.includes(filter)) {
+            cards[i].style.display = "";
+        } else {
+            cards[i].style.display = "none";
+        }
+    }
 }
