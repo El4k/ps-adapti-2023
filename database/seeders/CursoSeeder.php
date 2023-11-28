@@ -16,7 +16,7 @@ class CursoSeeder extends Seeder
     public function run()
     {
         Curso::factory()
-            ->count(20)
+            ->count(7)
             ->create();
     }
 }

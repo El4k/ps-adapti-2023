@@ -21,12 +21,22 @@ class AlunoRequest extends FormRequest
      *
      * @return array<string, mixed>
      */
+
+    protected function prepareForValidation()
+    {
+        // If contratado is null, set it to 0
+        $this->merge([
+            'contratado' => $this->contratado ?? 0,
+        ]);
+    }
+
     public function rules()
     {
         return [
             'nome' => ['required', 'string'],
             'descricao' => ['max:3000'],
-            'imagem' => ['image'],
+            'imagem' => ['image', 'nullable'],
+            'contratado' => ['boolean', 'nullable'],
             'curso_id' => ['required']
         ];
     }

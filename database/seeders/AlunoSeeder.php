@@ -16,7 +16,7 @@ class AlunoSeeder extends Seeder
     public function run()
     {
         Aluno::factory()
-            ->count(10) // Adjust the number of fake alunos as needed
+            ->count(15) // Adjust the number of fake alunos as needed
             ->create();
     }
 }
